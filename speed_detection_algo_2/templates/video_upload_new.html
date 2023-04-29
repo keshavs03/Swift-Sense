@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <title>Video Upload Form</title>
+  </head>
+  <body>
+    <body>
+      <video src="../static/background/video-1.mp4" autoplay loop muted></video>
+      <form id="upload-form" action="/upload" method="POST" enctype="multipart/form-data">
+        <input type="file" id="file-input" name="file" multiple />
+        <ul id="selected-files"></ul>
+        <p>Drag your files here or click in this area.</p>
+        <div id="text-input">
+          <input
+            type="label"
+            name="detect_object"
+            autocomplete="off"
+            class="d-flex-content"
+            placeholder="Enter object to detect"
+            required
+          />
+          <input
+            type="label"
+            name="positive_image"
+            autocomplete="off"
+            class="d-flex-content"
+            placeholder="postive image prompt"
+            required
+          />
+          <input
+            type="label"
+            name="negative_image"
+            autocomplete="off"
+            class="d-flex-content"
+            placeholder="negative image prompt"
+            required
+          />
+        </div>
+        <button type="submit" id="upload-button" value="Submit">Upload</button>
+      </form>
+
+      <script>
+        // Get the form and file input element
+        const form = document.getElementById("upload-form");
+        const fileInput = document.getElementById("file-input");
+
+        // Listen for file selection and update the form action
+        fileInput.addEventListener("change", (event) => {
+          const files = event.target.files;
+          // handleFileChange(event);
+          let fileNames = "";
+          for (let i = 0; i < files.length; i++) {
+            fileNames += files[i].name + ", ";
+          }
+          fileNames = fileNames.slice(0, -2); // remove the last ", "
+          document.getElementById("selected-files").innerHTML = fileNames;
+          if (files.length > 0) {
+            form.action = "/upload?numFiles=" + files.length;
+          }
+        });
+      </script>
+    </body>
+  </body>
+</html>

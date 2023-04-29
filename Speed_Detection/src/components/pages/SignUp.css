@@ -1,0 +1,146 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f2f5;
+  display: flex;
+  /* align-items: center; */
+  /* justify-content: center; */
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+.error {
+  color: white;
+}
+.container {
+  background-color: transparent;
+  box-shadow: 0 5px 30px black;
+  display: flex;
+  align-items: center;
+  width: 500px;
+  justify-content: center;
+  padding: 100px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.title h1 {
+  font-size: 45px;
+  font-weight: 600;
+  color: #e9e9e9;
+}
+
+.input-area {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-area input {
+  display: block;
+  width: 40vh;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  font-size: 14px;
+}
+
+.input-area label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 14px;
+  color: #999;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+#par_div {
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  height: 80vh;
+  justify-content: center;
+  background-color: transparent;
+}
+
+.input-area input:focus,
+.input-area input:valid {
+  outline: none;
+  border-color: #4caf50;
+}
+
+.input-area input:focus + label,
+.input-area input:valid + label {
+  top: -21px;
+  left: 10px;
+  font-size: 18px;
+  color: #4caf50;
+}
+
+.forgot-pass {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.forgot-pass a {
+  color: #4caf50;
+  text-decoration: none;
+}
+
+.forgot-pass a:hover {
+  color: #4caf50;
+}
+
+.button-area {
+  text-align: center;
+}
+
+.login-btn,
+.signup-btn {
+  display: inline-block;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 3px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-btn:hover,
+.signup-btn:hover {
+  background-color: #142715;
+}
+
+.form-toggle-area {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.form-toggle-area p {
+  font-size: 14px;
+  color: #4caf50;
+  /* text-decoration: none; */
+}
+
+.form-toggle-area span {
+  color: #4caf50;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.form-toggle-area span:hover {
+  text-decoration: underline;
+}
